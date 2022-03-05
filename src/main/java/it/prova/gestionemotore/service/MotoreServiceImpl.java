@@ -129,9 +129,24 @@ public class MotoreServiceImpl implements MotoreService {
 	}
 
 	@Override
-	public List<Motore> findByExample(Motore input) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Motore> trovaDaEsempio(Motore input) throws Exception {
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+
+			// uso l'injection per il dao
+			motoreDao.setEntityManager(entityManager);
+
+			// eseguo quello che realmente devo fare
+			return motoreDao.findByExample(input);
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 	}
 
 }

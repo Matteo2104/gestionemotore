@@ -20,6 +20,6 @@ public interface MotoreService {
 
 	public void rimuovi(Motore input) throws Exception;
 
-	public List<Motore> findByExample(Motore input) throws Exception;
+	List<Motore> trovaDaEsempio(Motore input) throws Exception;
 
 }

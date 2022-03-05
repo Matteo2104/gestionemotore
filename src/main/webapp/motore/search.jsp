@@ -7,7 +7,7 @@
 <head>
 	<jsp:include page="../header.jsp" />
 	<meta charset="ISO-8859-1">
-	<title>Modifica Motore</title>
+	<title>Insert title here</title>
 </head>
 <body class="d-flex flex-column h-100">
 	   
@@ -34,51 +34,51 @@
 			  
 			  <div class='card'>
 				    <div class='card-header'>
-				        <h5>Modifica elemento</h5> 
+				        <h5>Inserisci nuovo motore</h5> 
 				    </div>
 				    <div class='card-body'>
 		
 							<h6 class="card-title">I campi con <span class="text-danger">*</span> sono obbligatori</h6>
 		
 		
-							<form method="post" action="ExecuteEditMotoreServlet" class="row g-3" novalidate="novalidate">
+							<form method="post" action="ExecuteSearchMotoreServlet" class="row g-3" novalidate="novalidate">
 							
-								<% Motore motoreDaModificare = (Motore)request.getAttribute("edit_motore_attr"); %>
+								<% Motore motoreInPagina = (Motore)request.getAttribute("search_motore_attr"); %>
 							
 								<div class="col-md-6">
 									<label for="codice" class="form-label">Codice <span class="text-danger">*</span></label>
 									<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  
-										value="<%=motoreDaModificare.getCodice()!=null?motoreDaModificare.getCodice():"" %>" required>
+										value="<%=motoreInPagina.getCodice()!=null?motoreInPagina.getCodice():"" %>" required>
 								</div>
 								
 								<div class="col-md-6">
 									<label for="cilindrata" class="form-label">Cilindrata <span class="text-danger">*</span></label>
 									<input type="number" name="cilindrata" id="cilindrata" class="form-control" placeholder="Inserire la cilindrata"  
-										value="<%=motoreDaModificare.getCilindrata()!=0?motoreDaModificare.getCilindrata():"" %>" required>
+										value="<%=motoreInPagina.getCilindrata()!=0?motoreInPagina.getCilindrata():"" %>" required>
 								</div>
 							
 								<div class="col-md-6">
 									<label for="potenza" class="form-label">Potenza <span class="text-danger">*</span></label>
 									<input type="number" class="form-control" name="potenza" id="potenza" placeholder="Inserire potenza" 
-									value="<%=motoreDaModificare.getPotenza()!=0?motoreDaModificare.getPotenza():"" %>" required>
+									value="<%=motoreInPagina.getPotenza()!=0?motoreInPagina.getPotenza():"" %>" required>
 								</div>
 
 								<div class="col-md-6">
 									<label for="coppia" class="form-label">Coppia <span class="text-danger">*</span></label>
 									<input type="number" class="form-control" name="coppia" id="coppia" placeholder="Inserire coppia" 
-									value="<%=motoreDaModificare.getCoppia()!=0?motoreDaModificare.getCoppia():"" %>" required>
+									value="<%=motoreInPagina.getCoppia()!=0?motoreInPagina.getCoppia():"" %>" required>
 								</div>
 								
 								<div class="col-md-3">
 									<label for="dataProduzione" class="form-label">Data di Produzione<span class="text-danger">*</span></label>
 									<input class="form-control"  name="dataProduzione" id="dataProduzione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value="<%=motoreDaModificare.getDataProduzione()!=null? new SimpleDateFormat("yyyy-MM-dd").format(motoreDaModificare.getDataProduzione()):""  %>" required/>
+										value="<%=motoreInPagina.getDataProduzione()!=null? new SimpleDateFormat("yyyy-MM-dd").format(motoreInPagina.getDataProduzione()):""  %>" required/>
 								</div>
 								
 								
 							<div class="col-12">
-								<input type="hidden" name="idMotoreDaModificare" value="<%=motoreDaModificare.getId() %>" >
-								<button type="submit"  id="submit" class="btn btn-primary">Conferma</button>
+							
+								<button type="submit" id="submit" class="btn btn-primary">Cerca</button>
 							</div>
 		
 						</form>
@@ -98,5 +98,7 @@
 			
 			<!-- Footer -->
 			<jsp:include page="../footer.jsp" />
+
+	
 </body>
 </html>

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import it.prova.gestionemotore.model.Motore;
+
 public interface IBaseDAO<T> {
 
 	public List<T> list() throws Exception;
@@ -18,5 +20,7 @@ public interface IBaseDAO<T> {
 
 	// questo mi serve per l'injection
 	public void setEntityManager(EntityManager entityManager);
+
+	public List<Motore> findByExample(Motore input) throws Exception;
 
 }
