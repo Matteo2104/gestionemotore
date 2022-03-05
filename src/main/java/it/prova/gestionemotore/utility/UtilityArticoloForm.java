@@ -7,35 +7,46 @@ import java.util.Date;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+import it.prova.gestionemotore.model.Motore;
+
 //nel nome della classe vi è Articolo in quanto è una classe specifica
 public class UtilityArticoloForm {
-/*
-	public static Articolo createArticoloFromParams(String codiceInputParam, String descrizioneInputParam,
-			String prezzoInputStringParam, String dataArrivoStringParam) {
 
-		Articolo result = new Articolo(codiceInputParam, descrizioneInputParam);
+	public static Motore createMotoreFromParams(String codiceInputParam, String cilindrataInputParam,
+			String potenzaInputStringParam, String coppiaInputStringParam, String dataProduzioneStringParam) {
 
-		if (NumberUtils.isCreatable(prezzoInputStringParam)) {
-			result.setPrezzo(Integer.parseInt(prezzoInputStringParam));
+		Motore result = new Motore(codiceInputParam);
+
+		if (NumberUtils.isCreatable(cilindrataInputParam)) {
+			result.setCilindrata(Integer.parseInt(cilindrataInputParam));
 		}
-		result.setDataArrivo(parseDateArrivoFromString(dataArrivoStringParam));
+
+		if (NumberUtils.isCreatable(potenzaInputStringParam)) {
+			result.setPotenza(Integer.parseInt(potenzaInputStringParam));
+		}
+
+		if (NumberUtils.isCreatable(coppiaInputStringParam)) {
+			result.setCoppia(Integer.parseInt(coppiaInputStringParam));
+		}
+
+		result.setDataProduzione(parseDateProduzioneFromString(dataProduzioneStringParam));
 
 		return result;
 	}
 
-	public static boolean validateArticoloBean(Articolo articoloToBeValidated) {
+	public static boolean validateMotoreBean(Motore motoreToBeValidated) {
 		// prima controlliamo che non siano vuoti i parametri
-		if (StringUtils.isBlank(articoloToBeValidated.getCodice())
-				|| StringUtils.isBlank(articoloToBeValidated.getDescrizione())
-				|| articoloToBeValidated.getPrezzo() == null 
-				|| articoloToBeValidated.getPrezzo() < 1
-				|| articoloToBeValidated.getDataArrivo() == null) {
+		if (StringUtils.isBlank(motoreToBeValidated.getCodice())
+				|| motoreToBeValidated.getCilindrata() < 1
+				|| motoreToBeValidated.getPotenza() < 1
+				|| motoreToBeValidated.getCoppia() < 1 
+				|| motoreToBeValidated.getDataProduzione() == null) {
 			return false;
 		}
 		return true;
 	}
 
-	public static Date parseDateArrivoFromString(String dataArrivoStringParam) {
+	public static Date parseDateProduzioneFromString(String dataArrivoStringParam) {
 		if (StringUtils.isBlank(dataArrivoStringParam))
 			return null;
 
@@ -67,5 +78,5 @@ public class UtilityArticoloForm {
 			return null;
 		}
 	}
-	*/
+	
 }

@@ -40,6 +40,10 @@ public class Motore {
 
 	public Motore() {}
 
+	public Motore(String codice) {
+		this.codice = codice;
+	}
+
 	public Long getId() {
 		return id;
 	}
