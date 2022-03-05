@@ -58,7 +58,7 @@
 				                        <td><%=item.getPotenza() %></td>
 				                        <td>
 											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaMotoreServlet?idMotore=<%=item.getId() %>">Dettagli</a>
-											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareEditArticoloServlet?idArticoloDaModificare=<%=item.getId() %>">Edit</a>
+											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareEditMotoreServlet?idMotoreDaModificare=<%=item.getId() %>">Edit</a>
 											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteMotoreServlet?idMotoreDaEliminare=<%=item.getId() %>">Delete</a>
 										</td>
 				                    </tr>
