@@ -1,4 +1,5 @@
 <%@page import="it.prova.gestionemotore.model.Motore"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -27,29 +28,39 @@
 					
 					    <div class='card-body'>
 					    	<dl class="row">
+							  <dt class="col-sm-3 text-right">Id</dt>
+							  <dd class="col-sm-9"><%=motoreInPagina.getId() %></dd>
+					    	</dl>
+					    	
+					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Codice</dt>
 							  <dd class="col-sm-9"><%=motoreInPagina.getCodice() %></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
-							  <dt class="col-sm-3 text-right">Descrizione:</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getDescrizione() %></dd>
+							  <dt class="col-sm-3 text-right">Cilindrata:</dt>
+							  <dd class="col-sm-9"><%=motoreInPagina.getCilindrata() %></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
-							  <dt class="col-sm-3 text-right">Prezzo:</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getPrezzo() %></dd>
+							  <dt class="col-sm-3 text-right">Potenza:</dt>
+							  <dd class="col-sm-9"><%=motoreInPagina.getPotenza() %></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
-							  <dt class="col-sm-3 text-right">Data di Arrivo:</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getDataArrivo()!=null? new SimpleDateFormat("dd/MM/yyyy").format(articoloInPagina.getDataArrivo()):"N.D."  %></dd>
+							  <dt class="col-sm-3 text-right">Coppia:</dt>
+							  <dd class="col-sm-9"><%=motoreInPagina.getCoppia() %></dd>
+					    	</dl>
+					    	
+					    	<dl class="row">
+							  <dt class="col-sm-3 text-right">Data di Produzione:</dt>
+							  <dd class="col-sm-9"><%=motoreInPagina.getDataProduzione()!=null? new SimpleDateFormat("dd/MM/yyyy").format(motoreInPagina.getDataProduzione()):"N.D."  %></dd>
 					    	</dl>
 					    	
 					    </div>
 					    
 					    <div class='card-footer'>
-					        <a href="ListArticoliServlet" class='btn btn-outline-secondary' style='width:80px'>
+					        <a href="ListMotoriServlet" class='btn btn-outline-secondary' style='width:80px'>
 					            <i class='fa fa-chevron-left'></i> Back
 					        </a>
 					    </div>

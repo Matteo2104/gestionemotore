@@ -46,26 +46,18 @@
 				            <table class='table table-striped ' >
 				                <thead>
 				                    <tr>
-			                         	<th>Id</th>
 				                        <th>Codice</th>
-				                        <th>Cilindrata</th>
 				                        <th>Potenza</th>
-				                        <th>Coppia</th>
-				                        <th>Data di Produzione</th>
 				                    </tr>
 				                </thead>
 				                <tbody>
 				                	<% List<Motore> listaMotori = (List<Motore>)request.getAttribute("listaMotoriAttribute");
 				                		for(Motore item:listaMotori){ %>
 				                    <tr >
-				                        <td><%=item.getId() %></td>
 				                        <td><%=item.getCodice() %></td>
-				                        <td><%=item.getCilindrata() %></td>
 				                        <td><%=item.getPotenza() %></td>
-				                        <td><%=item.getCoppia() %></td>
-				                        <td><%=item.getDataProduzione()!=null? new SimpleDateFormat("dd/MM/yyyy").format(item.getDataProduzione()):"N.D."%></td>
 				                        <td>
-											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaArticoloServlet?idArticolo=<%=item.getId() %>">Visualizza</a>
+											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaMotoreServlet?idMotore=<%=item.getId() %>">Dettagli</a>
 											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareEditArticoloServlet?idArticoloDaModificare=<%=item.getId() %>">Edit</a>
 											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteArticoloServlet?idArticoloDaEliminare=<%=item.getId() %>">Delete</a>
 										</td>
