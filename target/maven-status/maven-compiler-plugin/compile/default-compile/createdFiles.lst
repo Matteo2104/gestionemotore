@@ -1,0 +1,9 @@
+it\prova\gestionemotore\utility\UtilityArticoloForm.class
+it\prova\gestionemotore\model\Motore.class
+it\prova\gestionemotore\dao\MotoreDAOImpl.class
+it\prova\gestionemotore\service\MyServiceFactory.class
+it\prova\gestionemotore\dao\MotoreDAO.class
+it\prova\gestionemotore\web\listener\LocalEntityManagerFactoryListener.class
+it\prova\gestionemotore\dao\IBaseDAO.class
+it\prova\gestionemotore\service\MotoreServiceImpl.class
+it\prova\gestionemotore\service\MotoreService.class
