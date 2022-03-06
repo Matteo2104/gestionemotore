@@ -35,6 +35,8 @@ public class ExecuteInsertMotoreServlet extends HttpServlet {
 		Motore motoreInstance = UtilityArticoloForm.createMotoreFromParams(codiceInputParam,
 				cilindrataInputParam, potenzaInputStringParam, coppiaInputStringParam, dataProduzioneStringParam);
 
+		System.out.println(motoreInstance);
+		
 		// se la validazione non risulta ok
 		if (!UtilityArticoloForm.validateMotoreBean(motoreInstance)) {
 			request.setAttribute("insert_motore_attr", motoreInstance);

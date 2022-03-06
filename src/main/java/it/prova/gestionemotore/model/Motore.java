@@ -108,4 +108,12 @@ public class Motore {
 		this.updateDateTime = updateDateTime;
 	}
 
+	@Override
+	public String toString() {
+		return "Motore [id=" + id + ", codice=" + codice + ", cilindrata=" + cilindrata + ", potenza=" + potenza
+				+ ", coppia=" + coppia + ", dataProduzione=" + dataProduzione + ", createDateTime=" + createDateTime
+				+ ", updateDateTime=" + updateDateTime + "]";
+	}
+	
+
 }
