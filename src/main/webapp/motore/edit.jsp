@@ -1,5 +1,6 @@
 <%@page import="it.prova.gestionemotore.model.Motore"%>
 <%@page import="java.text.SimpleDateFormat"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -43,41 +44,72 @@
 		
 							<form method="post" action="ExecuteEditMotoreServlet" class="row g-3" novalidate="novalidate">
 							
-								<% Motore motoreDaModificare = (Motore)request.getAttribute("edit_motore_attr"); %>
-							
+								<c:set var="motoreDaModificare" value="${edit_motore_attr}"/>
+															
 								<div class="col-md-6">
 									<label for="codice" class="form-label">Codice <span class="text-danger">*</span></label>
-									<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  
-										value="<%=motoreDaModificare.getCodice()!=null?motoreDaModificare.getCodice():"" %>" required>
+									<c:choose>
+										<c:when test="${motoreDaModificare.codice!=null}">
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.codice}" required>
+  										</c:when>
+										<c:otherwise>
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
+  										</c:otherwise>
+									</c:choose>
 								</div>
 								
 								<div class="col-md-6">
 									<label for="cilindrata" class="form-label">Cilindrata <span class="text-danger">*</span></label>
-									<input type="number" name="cilindrata" id="cilindrata" class="form-control" placeholder="Inserire la cilindrata"  
-										value="<%=motoreDaModificare.getCilindrata()!=0?motoreDaModificare.getCilindrata():"" %>" required>
+									<c:choose>
+										<c:when test="${motoreDaModificare.cilindrata!=0}">
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.cilindrata}" required>
+  										</c:when>
+										<c:otherwise>
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
+  										</c:otherwise>
+									</c:choose>
 								</div>
 							
 								<div class="col-md-6">
 									<label for="potenza" class="form-label">Potenza <span class="text-danger">*</span></label>
-									<input type="number" class="form-control" name="potenza" id="potenza" placeholder="Inserire potenza" 
-									value="<%=motoreDaModificare.getPotenza()!=0?motoreDaModificare.getPotenza():"" %>" required>
+									<c:choose>
+										<c:when test="${motoreDaModificare.potenza!=0}">
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.potenza}" required>
+  										</c:when>
+										<c:otherwise>
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
+  										</c:otherwise>
+									</c:choose>
 								</div>
 
 								<div class="col-md-6">
 									<label for="coppia" class="form-label">Coppia <span class="text-danger">*</span></label>
-									<input type="number" class="form-control" name="coppia" id="coppia" placeholder="Inserire coppia" 
-									value="<%=motoreDaModificare.getCoppia()!=0?motoreDaModificare.getCoppia():"" %>" required>
+									<c:choose>
+										<c:when test="${motoreDaModificare.coppia!=0}">
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.coppia}" required>
+  										</c:when>
+										<c:otherwise>
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
+  										</c:otherwise>
+									</c:choose>
 								</div>
 								
 								<div class="col-md-3">
 									<label for="dataProduzione" class="form-label">Data di Produzione<span class="text-danger">*</span></label>
-									<input class="form-control"  name="dataProduzione" id="dataProduzione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value="<%=motoreDaModificare.getDataProduzione()!=null? new SimpleDateFormat("yyyy-MM-dd").format(motoreDaModificare.getDataProduzione()):""  %>" required/>
+									<c:choose>
+										<c:when test="${motoreDaModificare.dataProduzione!=null}">
+											<fmt:formatDate value="${motoreDaModificare.dataProduzione}" type="date" pattern="yyyy-MM-dd" var="theFormattedDate" />
+											<input class="form-control"  name="dataProduzione" id="dataProduzione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" value="${theFormattedDate}" required/>
+										</c:when>
+										<c:otherwise>
+											<input class="form-control"  name="dataProduzione" id="dataProduzione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" value="" required/>  										
+										</c:otherwise>
+									</c:choose>
 								</div>
 								
 								
 							<div class="col-12">
-								<input type="hidden" name="idMotoreDaModificare" value="<%=motoreDaModificare.getId() %>" >
+								<input type="hidden" name="idMotoreDaModificare" value="${motoreDaModificare.id}" >
 								<button type="submit"  id="submit" class="btn btn-primary">Conferma</button>
 							</div>
 		
