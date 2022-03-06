@@ -39,10 +39,6 @@ public class ExecuteSearchMotoreServlet extends HttpServlet {
 				potenzaInputStringParam, coppiaInputStringParam, dataProduzioneStringParam);
 
 		
-		
-		// assegno l'id
-		//motoreInstance.setId(Long.parseLong(idMotoreParam));
-		
 		try {
 			request.setAttribute("listaMotoriAttribute", MyServiceFactory.getMotoreServiceInstance().trovaDaEsempio(motoreInstance));
 			request.setAttribute("successMessage", "Ricerca avvenuta con successo");
