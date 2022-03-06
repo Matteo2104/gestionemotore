@@ -1,5 +1,6 @@
 <%@page import="it.prova.gestionemotore.model.Motore"%>
 <%@page import="java.text.SimpleDateFormat"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -23,38 +24,38 @@
 					    <div class='card-header'>
 					        <h5>Visualizza dettaglio</h5>
 					    </div>
-					     <% Motore motoreInPagina = (Motore)request.getAttribute("visualizza_motore_attr"); %>
-					    
-					
+					     
+					    <c:set var="motoreInPagina" value="${visualizza_motore_attr}"/>
+						
 					    <div class='card-body'>
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Id</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getId() %></dd>
+							  <dd class="col-sm-9"><c:out value="${motoreInPagina.id}"/></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Codice</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getCodice() %></dd>
+							  <dd class="col-sm-9"><c:out value="${motoreInPagina.codice}"/></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Cilindrata:</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getCilindrata() %></dd>
+							  <dd class="col-sm-9"><c:out value="${motoreInPagina.cilindrata}"/></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Potenza:</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getPotenza() %></dd>
+							  <dd class="col-sm-9"><c:out value="${motoreInPagina.potenza}"/></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Coppia:</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getCoppia() %></dd>
+							  <dd class="col-sm-9"><c:out value="${motoreInPagina.coppia}"/></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Data di Produzione:</dt>
-							  <dd class="col-sm-9"><%=motoreInPagina.getDataProduzione()!=null? new SimpleDateFormat("dd/MM/yyyy").format(motoreInPagina.getDataProduzione()):"N.D."  %></dd>
+							  <dd class="col-sm-9"><c:out value="${motoreInPagina.dataProduzione}"/></dd>
 					    	</dl>
 					    	
 					    </div>
