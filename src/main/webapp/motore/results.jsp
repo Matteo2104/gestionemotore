@@ -3,12 +3,14 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="it.prova.gestionemotore.model.Motore"%>
 <%@page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<jsp:include page="../header.jsp" />
-<meta charset="ISO-8859-1">
-<title>Lista dei motori</title>
+	
+	<jsp:include page="../header.jsp" />
+	<meta charset="ISO-8859-1">
+	<title>Lista dei motori</title>
 </head>
 <body class="d-flex flex-column h-100">
 	 
@@ -33,7 +35,12 @@
 				   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
 				</div>
 		  
-		  
+		  		<!-- prova del taglet 
+			  		<c:set var="condizione" value="1"/>
+			  		<c:if test="${condizione == 1}">
+			  			<c:out value="the condition is true"/>	
+			  		</c:if>
+		  		-->
 		  
 		  		<div class='card'>
 				    <div class='card-header'>
@@ -51,19 +58,25 @@
 				                    </tr>
 				                </thead>
 				                <tbody>
-				                	<% List<Motore> listaMotori = (List<Motore>)request.getAttribute("listaMotoriAttribute");
-				                		for(Motore item:listaMotori){ %>
-				                    <tr >
-				                        <td><%=item.getCodice() %></td>
-				                        <td><%=item.getPotenza() %></td>
-				                        <td>
-											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaMotoreServlet?idMotore=<%=item.getId() %>">Dettagli</a>
-											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareEditMotoreServlet?idMotoreDaModificare=<%=item.getId() %>">Edit</a>
-											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteMotoreServlet?idMotoreDaEliminare=<%=item.getId() %>">Delete</a>
-										</td>
-				                    </tr>
-				                    <% } %>
-				                    
+				                
+				                	
+				                	
+				                	
+				                	
+				                	
+				                	<c:forEach items="${listaMotoriAttribute}" var="motore" >
+				                		<tr >
+				                			<td><c:out value="${motore.codice}"/></td>
+				                			<td><c:out value="${motore.potenza}"/></td>
+					                        
+					                        <td>
+												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaMotoreServlet?idMotore=${motore.id}">Dettagli</a>
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareEditMotoreServlet?idMotoreDaModificare=${motore.id}">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteMotoreServlet?idMotoreDaEliminare=${motore.id}">Delete</a>
+											</td>
+											
+				                    	</tr>
+				                	</c:forEach>
 				                </tbody>
 				            </table>
 				        </div>

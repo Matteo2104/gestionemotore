@@ -28,6 +28,7 @@ public class ListMotoriServlet extends HttpServlet {
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
+		
 		request.getRequestDispatcher("/motore/results.jsp").forward(request, response);
 	}
 
