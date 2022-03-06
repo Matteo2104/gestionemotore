@@ -40,11 +40,16 @@ public class ExecuteEditMotoreServlet extends HttpServlet {
 		String coppiaInputStringParam = request.getParameter("coppia");
 		String dataProduzioneStringParam = request.getParameter("dataProduzione");
 
+		
+		
 		// preparo un bean (che mi serve sia per tornare in pagina
 		// che per inserire) e faccio il binding dei parametri
 		Motore motoreInstance = UtilityArticoloForm.createMotoreFromParams(codiceInputParam, cilindrataInputParam,
 				potenzaInputStringParam, coppiaInputStringParam, dataProduzioneStringParam);
 
+		
+		
+		
 		// se la validazione non risulta ok
 		if (!UtilityArticoloForm.validateMotoreBean(motoreInstance)) {
 			request.setAttribute("insert_motore_attr", motoreInstance);
@@ -55,7 +60,7 @@ public class ExecuteEditMotoreServlet extends HttpServlet {
 		
 		// assegno l'id
 		motoreInstance.setId(Long.parseLong(idMotoreParam));
-		
+				
 		try {
 			MyServiceFactory.getMotoreServiceInstance().aggiorna(motoreInstance);
 			

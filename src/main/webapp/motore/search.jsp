@@ -49,8 +49,8 @@
 								<div class="col-md-6">
 									<label for="codice" class="form-label">Codice <span class="text-danger">*</span></label>
 									<c:choose>
-										<c:when test="${motoreDaModificare.codice!=null}">
-											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.codice}" required>
+										<c:when test="${motoreInPagina.codice!=null}">
+											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreInPagina.codice}" required>
   										</c:when>
 										<c:otherwise>
 											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
@@ -61,8 +61,8 @@
 								<div class="col-md-6">
 									<label for="cilindrata" class="form-label">Cilindrata <span class="text-danger">*</span></label>
 									<c:choose>
-										<c:when test="${motoreDaModificare.cilindrata!=0}">
-											<input type="text" name="cilindrata" id="cilindrata" class="form-control" placeholder="Inserire la cilindrata"  value="${motoreDaModificare.cilindrata}" required>
+										<c:when test="${motoreInPagina.cilindrata!=0}">
+											<input type="text" name="cilindrata" id="cilindrata" class="form-control" placeholder="Inserire la cilindrata"  value="${motoreInPagina.cilindrata}" required>
   										</c:when>
 										<c:otherwise>
 											<input type="text" name="cilindrata" id="cilindrata" class="form-control" placeholder="Inserire la cilindrata"  value="" required>
@@ -73,8 +73,8 @@
 								<div class="col-md-6">
 									<label for="potenza" class="form-label">Potenza <span class="text-danger">*</span></label>
 									<c:choose>
-										<c:when test="${motoreDaModificare.potenza!=0}">
-											<input type="text" name="potenza" id="potenza" class="form-control" placeholder="Inserire la potenza"  value="${motoreDaModificare.potenza}" required>
+										<c:when test="${motoreInPagina.potenza!=0}">
+											<input type="text" name="potenza" id="potenza" class="form-control" placeholder="Inserire la potenza"  value="${motoreInPagina.potenza}" required>
   										</c:when>
 										<c:otherwise>
 											<input type="text" name="potenza" id="potenza" class="form-control" placeholder="Inserire la potenza"  value="" required>
@@ -85,8 +85,8 @@
 								<div class="col-md-6">
 									<label for="coppia" class="form-label">Coppia <span class="text-danger">*</span></label>
 									<c:choose>
-										<c:when test="${motoreDaModificare.coppia!=0}">
-											<input type="text" name="coppia" id="coppia" class="form-control" placeholder="Inserire la coppia"  value="${motoreDaModificare.coppia}" required>
+										<c:when test="${motoreInPagina.coppia!=0}">
+											<input type="text" name="coppia" id="coppia" class="form-control" placeholder="Inserire la coppia"  value="${motoreInPagina.coppia}" required>
   										</c:when>
 										<c:otherwise>
 											<input type="text" name="coppia" id="coppia" class="form-control" placeholder="Inserire la coppia"  value="" required>
@@ -97,8 +97,8 @@
 								<div class="col-md-3">
 									<label for="dataProduzione" class="form-label">Data di Produzione<span class="text-danger">*</span></label>
 									<c:choose>
-										<c:when test="${motoreDaModificare.dataProduzione!=null}">
-											<fmt:formatDate value="${motoreDaModificare.dataProduzione}" type="date" pattern="yyyy-MM-dd" var="theFormattedDate" />
+										<c:when test="${motoreInPagina.dataProduzione!=null}">
+											<fmt:formatDate value="${motoreInPagina.dataProduzione}" type="date" pattern="yyyy-MM-dd" var="theFormattedDate" />
 											<input class="form-control"  name="dataProduzione" id="dataProduzione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" value="${theFormattedDate}" required/>
 										</c:when>
 										<c:otherwise>
