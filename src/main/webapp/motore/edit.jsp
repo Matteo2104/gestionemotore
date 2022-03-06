@@ -62,10 +62,10 @@
 									<label for="cilindrata" class="form-label">Cilindrata <span class="text-danger">*</span></label>
 									<c:choose>
 										<c:when test="${motoreDaModificare.cilindrata!=0}">
-											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.cilindrata}" required>
+											<input type="text" name="cilindrata" id="cilindrata" class="form-control" placeholder="Inserire la cilindrata"  value="${motoreDaModificare.cilindrata}" required>
   										</c:when>
 										<c:otherwise>
-											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
+											<input type="text" name="cilindrata" id="cilindrata" class="form-control" placeholder="Inserire la cilindrata"  value="" required>
   										</c:otherwise>
 									</c:choose>
 								</div>
@@ -74,10 +74,10 @@
 									<label for="potenza" class="form-label">Potenza <span class="text-danger">*</span></label>
 									<c:choose>
 										<c:when test="${motoreDaModificare.potenza!=0}">
-											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.potenza}" required>
+											<input type="text" name="potenza" id="potenza" class="form-control" placeholder="Inserire la potenza"  value="${motoreDaModificare.potenza}" required>
   										</c:when>
 										<c:otherwise>
-											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
+											<input type="text" name="potenza" id="potenza" class="form-control" placeholder="Inserire la potenza"  value="" required>
   										</c:otherwise>
 									</c:choose>
 								</div>
@@ -86,10 +86,10 @@
 									<label for="coppia" class="form-label">Coppia <span class="text-danger">*</span></label>
 									<c:choose>
 										<c:when test="${motoreDaModificare.coppia!=0}">
-											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="${motoreDaModificare.coppia}" required>
+											<input type="text" name="coppia" id="coppia" class="form-control" placeholder="Inserire la coppia"  value="${motoreDaModificare.coppia}" required>
   										</c:when>
 										<c:otherwise>
-											<input type="text" name="codice" id="codice" class="form-control" placeholder="Inserire il codice"  value="" required>
+											<input type="text" name="coppia" id="coppia" class="form-control" placeholder="Inserire la coppia"  value="" required>
   										</c:otherwise>
 									</c:choose>
 								</div>
